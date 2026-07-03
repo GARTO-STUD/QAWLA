@@ -1,0 +1,54 @@
+name = "qawla"
+main = ".open-next/worker.js"
+compatibility_date = "2025-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Account & project (set via wrangler login / env)
+workers_dev = true
+
+# Build configuration
+[build]
+command = "npm run build:cloudflare"
+
+# Observability
+[observability]
+enabled = true
+
+# Static assets
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+# Environment variables (non-secret — secrets via `wrangler secret put`)
+[vars]
+NEXT_PUBLIC_SITE_URL = "https://qawla.com"
+NEXT_PUBLIC_GA_ID = ""
+NEXT_PUBLIC_PLAUSIBLE_DOMAIN = "qawla.com"
+NEXT_PUBLIC_ADSENSE_ID = ""
+NODE_ENV = "production"
+
+# KV namespace removed for now — re-add once a real namespace is created:
+# wrangler kv namespace create RATELIMIT
+
+# Durable Object for live SSE fan-out (optional — improves live page scaling)
+# [[durable_objects.bindings]]
+# name = "LIVE"
+# class_name = "LiveMatchDO"
+
+# Cron triggers — fire ingestion + pipeline every 15 minutes
+[triggers]
+crons = [
+  "*/15 * * * *",     # Every 15 min: ingest + run pipeline
+]
+
+# Smart placement
+[placement]
+mode = "smart"
+
+# Limits
+
+# Routes (production)
+# routes = [
+#   { pattern = "qawla.com/*", zone_name = "qawla.com" },
+#   { pattern = "www.qawla.com/*", zone_name = "qawla.com" },
+# ]

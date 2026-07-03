@@ -1,0 +1,43 @@
+{
+  "name": "Qawla",
+  "short_name": "Qawla",
+  "description": "Premium football news, transfers, tactical analysis, and live match commentary — verified by an AI editorial desk.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8faff",
+  "theme_color": "#060d1f",
+  "orientation": "portrait-primary",
+  "categories": ["sports", "news", "football"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Latest news",
+      "short_name": "News",
+      "url": "/news",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Live matches",
+      "short_name": "Live",
+      "url": "/live",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Transfers",
+      "short_name": "Transfers",
+      "url": "/transfers",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    }
+  ],
+  "screenshots": [],
+  "prefer_related_applications": false
+}
