@@ -1,0 +1,18 @@
+<svg width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="qawla-pitch-fav" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00a854"/>
+      <stop offset="0.5" stop-color="#00d96a"/>
+      <stop offset="1" stop-color="#007a3d"/>
+    </linearGradient>
+    <linearGradient id="qawla-gold-fav" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffc857"/>
+      <stop offset="1" stop-color="#ff9d00"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="10" fill="#060d1f"/>
+  <circle cx="24" cy="24" r="22" stroke="url(#qawla-gold-fav)" stroke-width="2" opacity="0.9"/>
+  <circle cx="24" cy="24" r="15" fill="url(#qawla-pitch-fav)"/>
+  <path d="M6 24 L14 24 L17 16 L21 32 L24 24 L42 24" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+  <polygon points="24,19 27,21 26,24 22,24 21,21" fill="#060d1f" opacity="0.85"/>
+</svg>

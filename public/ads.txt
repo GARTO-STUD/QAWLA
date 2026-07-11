@@ -1,0 +1,8 @@
+# ads.txt — Authorised Digital Sellers
+# https://iabtechlab.com/ads-txt/
+#
+# Qawla sells inventory via Google AdSense.
+# Replace pub-0000000000000000 with the actual AdSense publisher ID
+# (set as NEXT_PUBLIC_ADSENSE_ID in env).
+
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
