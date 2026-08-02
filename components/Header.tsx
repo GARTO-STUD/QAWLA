@@ -43,8 +43,8 @@ export function Header() {
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-300',
         scrolled
-          ? 'bg-cream/95 backdrop-blur-md shadow-sm border-b border-gray-200'
-          : 'bg-cream/80 backdrop-blur-sm',
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200'
+          : 'bg-white/80 backdrop-blur-sm',
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -100,7 +100,7 @@ export function Header() {
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />
-          <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-cream shadow-2xl slide-in-right flex flex-col">
+          <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl slide-in-right flex flex-col">
             <div className="flex items-center justify-between p-4 border-b border-gray-200">
               <Logo size="sm" />
               <button
