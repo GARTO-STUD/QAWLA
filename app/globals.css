@@ -221,6 +221,16 @@
            active:translate-y-0 active:scale-[0.98];
   }
 
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3
+           font-bold rounded-xl text-night transition-all text-sm sm:text-base
+           min-h-[44px] shadow-md
+           bg-white border-2 border-gray-200
+           hover:border-pitch hover:text-pitch-dk hover:bg-pitch/5
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pitch
+           active:translate-y-0 active:scale-[0.98];
+  }
+
   .btn-night {
     @apply inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3
            font-bold rounded-xl text-cream transition-all text-sm sm:text-base
@@ -330,6 +340,24 @@
   .prose-qawla strong { @apply font-bold text-night; }
 
   /* ── Cards & lift ────────────────────────────────────────────────────── */
+  .card {
+    @apply relative rounded-2xl border border-gray-100 bg-white shadow-sm
+           transition-all duration-300;
+  }
+  .card:hover {
+    @apply shadow-lg;
+    transform: translateY(-2px);
+    border-color: rgba(0, 217, 106, 0.3);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-out cursor-pointer;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px -16px rgba(6, 13, 31, 0.18);
+  }
+
   .card-lift {
     @apply transition-all duration-300 ease-out;
   }
@@ -462,6 +490,35 @@
 .group:hover > .league-shine,
 a.group:hover .league-shine {
   animation: shine-sweep 1.2s ease-out;
+}
+
+/* Parallax scroll effect for hero images */
+@keyframes parallax-scroll {
+  from { transform: translateY(-10px); }
+  to   { transform: translateY(10px); }
+}
+.animate-parallax { animation: parallax-scroll 8s ease-in-out infinite alternate; }
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient-text {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* Fade in on scroll (Intersection Observer target class) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

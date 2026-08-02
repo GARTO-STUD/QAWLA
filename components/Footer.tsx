@@ -79,16 +79,16 @@ export function Footer() {
   };
 
   return (
-    <footer className="mt-auto bg-night text-cream/80">
-      {/* Newsletter */}
-      <div className="border-b border-white/10">
+    <footer className="mt-auto bg-white border-t border-gray-200">
+      {/* Newsletter - Light version */}
+      <div className="border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-cream">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-night">
                 {t('footer.newsletter_title')}
               </h2>
-              <p className="mt-3 text-cream/70 text-sm sm:text-base max-w-md">
+              <p className="mt-3 text-night/70 text-sm sm:text-base max-w-md">
                 {t('footer.newsletter_desc')}
               </p>
             </div>
@@ -99,7 +99,7 @@ export function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t('footer.email_placeholder')}
-                className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-cream placeholder:text-cream/40 focus:outline-none focus:ring-2 focus:ring-pitch focus:border-transparent min-h-[48px] text-sm"
+                className="flex-1 px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-night placeholder:text-night/40 focus:outline-none focus:ring-2 focus:ring-pitch focus:border-transparent min-h-[48px] text-sm"
                 aria-label={t('footer.email_aria')}
               />
               <button
@@ -113,7 +113,7 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Main footer */}
+      {/* Main footer - Light version */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10">
           {/* Brand */}
@@ -121,7 +121,7 @@ export function Footer() {
             <div className="mb-5">
               <Logo />
             </div>
-            <p className="text-cream/60 text-sm leading-relaxed max-w-sm mb-6">
+            <p className="text-night/60 text-sm leading-relaxed max-w-sm mb-6">
               {t('footer.brand_desc')}
             </p>
             <div className="flex items-center gap-3">
@@ -132,7 +132,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cream/60 hover:text-pitch hover:border-pitch/40 hover:bg-pitch/10 transition-all"
+                  className="w-10 h-10 rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-night/60 hover:text-pitch-dk hover:border-pitch/40 hover:bg-pitch/10 transition-all"
                 >
                   {s.icon}
                 </a>
@@ -143,11 +143,11 @@ export function Footer() {
           {/* Links */}
           {FOOTER_LINKS.map((section) => (
             <nav key={section.titleKey} aria-label={t(section.titleKey)}>
-              <h3 className="text-cream/90 text-sm font-bold uppercase tracking-wider mb-4">{t(section.titleKey)}</h3>
+              <h3 className="text-night/90 text-sm font-bold uppercase tracking-wider mb-4">{t(section.titleKey)}</h3>
               <ul className="space-y-2.5">
                 {section.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-cream/55 text-sm hover:text-pitch transition-colors">
+                    <Link href={link.href} className="text-night/55 text-sm hover:text-pitch-dk transition-colors">
                       {t(link.key)}
                     </Link>
                   </li>
@@ -157,38 +157,18 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Trust badges */}
-        <div className="mt-12 pt-8 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl">
-          <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-lg bg-pitch/10 border border-pitch/20 flex items-center justify-center shrink-0">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d96a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div>
-              <p className="text-cream/90 text-xs font-bold mb-0.5">{t('footer.independent')}</p>
-              <p className="text-cream/40 text-xs leading-relaxed">{t('footer.verified_desc')}</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffc857" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            </div>
-            <div>
-              <p className="text-cream/90 text-xs font-bold mb-0.5">{t('footer.ad_free')}</p>
-              <p className="text-cream/40 text-xs leading-relaxed">{t('footer.independent_desc')}</p>
-            </div>
-          </div>
-        </div>
+        {/* Removed trust badges section as requested */}
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-gray-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-cream/40 text-xs text-center sm:text-left">
+          <p className="text-night/40 text-xs text-center sm:text-left">
             © {new Date().getFullYear()} {t('footer.copyright')}
           </p>
-          <div className="flex items-center gap-4 text-xs text-cream/40">
-            <Link href="/privacy" className="hover:text-cream/80 transition-colors">{t('footer.link_privacy')}</Link>
-            <Link href="/terms" className="hover:text-cream/80 transition-colors">{t('footer.link_terms')}</Link>
+          <div className="flex items-center gap-4 text-xs text-night/40">
+            <Link href="/privacy" className="hover:text-night/80 transition-colors">{t('footer.link_privacy')}</Link>
+            <Link href="/terms" className="hover:text-night/80 transition-colors">{t('footer.link_terms')}</Link>
           </div>
         </div>
       </div>

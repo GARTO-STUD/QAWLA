@@ -41,34 +41,6 @@ const FEATURES = [
       </svg>
     ),
   },
-  {
-    title: 'Live commentary',
-    description: 'Real-time match events delivered via SSE. Goals, cards, substitutions, and tactical notes — as they happen.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 12h4l3-9 4 18 3-9h4" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Independent & reader-funded',
-    description: 'No paywall, no clickbait. We are funded by readers and a strict editorial standard — not by the clubs we cover.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Multi-league coverage',
-    description: 'Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Champions League, Europa League, and international football.',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-      </svg>
-    ),
-  },
 ];
 
 const LEAGUES = [
@@ -78,8 +50,6 @@ const LEAGUES = [
   { name: 'Bundesliga', country: 'Germany', color: 'from-red-500 to-red-700' },
   { name: 'Ligue 1', country: 'France', color: 'from-amber-500 to-amber-700' },
   { name: 'Champions League', country: 'Europe', color: 'from-indigo-500 to-indigo-800' },
-  { name: 'Europa League', country: 'Europe', color: 'from-orange-400 to-orange-600' },
-  { name: 'International', country: 'Global', color: 'from-emerald-500 to-emerald-700' },
 ];
 
 export default function HomePage() {
@@ -89,13 +59,14 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero */}
+      {/* Hero - Light variant with beautiful background */}
       <PageHero
         eyebrow="Premium football journalism"
         title="The game, verified."
         highlight="Beautifully."
         description="Qawla delivers verified football journalism — every story scouted, fact-checked, analysed, written, and edited through a five-stage editorial pipeline before it reaches you."
-        variant="dark"
+        variant="light"
+        backgroundImage="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1920&q=80"
       >
         <div className="flex flex-col sm:flex-row gap-3">
           <Link href="/news" className="btn-primary justify-center">
@@ -111,7 +82,7 @@ export default function HomePage() {
       </PageHero>
 
       {/* Stats */}
-      <section className="py-10 sm:py-14 lg:py-16 bg-cream" aria-label="Site statistics">
+      <section className="py-10 sm:py-14 lg:py-16 bg-white" aria-label="Site statistics">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             <StatCard label="Published articles" value={SITE_STATS.publishedArticles} variant="pitch"
@@ -127,7 +98,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured + latest */}
-      <section className="py-10 sm:py-14 lg:py-16 bg-cream" aria-labelledby="latest-heading">
+      <section className="py-10 sm:py-14 lg:py-16 bg-gradient-to-b from-white to-cream" aria-labelledby="latest-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-6 sm:mb-8">
             <div>
@@ -164,34 +135,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-12 sm:py-16 lg:py-24 night-gradient pitch-pattern text-cream" aria-labelledby="features-heading">
+      {/* Features - Light background version */}
+      <section className="py-12 sm:py-16 lg:py-24 bg-white pitch-pattern-fine" aria-labelledby="features-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <span className="badge bg-white/10 text-pitch backdrop-blur mb-3">Why Qawla</span>
-            <h2 id="features-heading" className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-cream">
+            <span className="badge bg-pitch/10 text-pitch-dk mb-3">Why Qawla</span>
+            <h2 id="features-heading" className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-night">
               Built different. Built honest.
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-cream/70 max-w-2xl mx-auto">
+            <p className="mt-4 text-base sm:text-lg text-night/70 max-w-2xl mx-auto">
               We are not a content farm. We are a newsroom — engineered for accuracy, transparency, and depth.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {FEATURES.map((f) => (
-              <div key={f.title} className="glass rounded-2xl p-5 sm:p-6 hover:bg-white/10 transition-all">
-                <div className="w-12 h-12 rounded-xl bg-pitch/20 text-pitch flex items-center justify-center mb-4">
+              <div key={f.title} className="card card-premium p-5 sm:p-6 hover:shadow-xl transition-all bg-white border border-gray-100">
+                <div className="w-12 h-12 rounded-xl bg-pitch/10 text-pitch-dk flex items-center justify-center mb-4">
                   {f.icon}
                 </div>
-                <h3 className="font-display font-bold text-lg sm:text-xl text-cream mb-2">{f.title}</h3>
-                <p className="text-sm text-cream/70 leading-relaxed">{f.description}</p>
+                <h3 className="font-display font-bold text-lg sm:text-xl text-night mb-2">{f.title}</h3>
+                <p className="text-sm text-night/70 leading-relaxed">{f.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Leagues */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-cream" aria-labelledby="leagues-heading">
+      {/* Leagues - Major League Cards (Bigger) */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-cream to-white" aria-labelledby="leagues-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-10">
             <span className="badge bg-pitch/10 text-pitch-dk mb-2">Coverage</span>
@@ -199,17 +170,18 @@ export default function HomePage() {
               Every major league. Every angle.
             </h2>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {LEAGUES.map((league) => (
               <Link
                 key={league.name}
                 href={`/category/${league.name.toLowerCase().replace(/\s+/g, '-')}`}
-                className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${league.color} p-5 sm:p-6 aspect-[4/3] flex flex-col justify-end hover:scale-[1.02] transition-transform`}
+                className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br ${league.color} p-6 sm:p-8 aspect-[16/10] flex flex-col justify-end hover:scale-[1.03] transition-all duration-300 shadow-lg hover:shadow-2xl`}
               >
                 <div className="absolute inset-0 pitch-pattern opacity-20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="relative">
-                  <p className="font-display font-extrabold text-base sm:text-lg text-white leading-tight">{league.name}</p>
-                  <p className="text-xs sm:text-sm text-white/70 mt-0.5">{league.country}</p>
+                  <p className="font-display font-extrabold text-xl sm:text-2xl text-white leading-tight">{league.name}</p>
+                  <p className="text-sm sm:text-base text-white/80 mt-1">{league.country}</p>
                 </div>
               </Link>
             ))}
@@ -217,29 +189,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-cream" aria-labelledby="cta-heading">
+      {/* CTA - Light gradient */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-white" aria-labelledby="cta-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl pitch-gradient p-8 sm:p-12 lg:p-16 text-white">
-            <div className="absolute inset-0 pitch-pattern opacity-30" />
-            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-pitch/10 via-pitch/5 to-white p-8 sm:p-12 lg:p-16 border-2 border-pitch/20">
+            <div className="absolute inset-0 pitch-pattern opacity-20" />
+            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-pitch/10 blur-3xl" />
             <div className="relative max-w-2xl">
-              <h2 id="cta-heading" className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight">
+              <h2 id="cta-heading" className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight text-night">
                 Independent journalism needs independent backers.
               </h2>
-              <p className="mt-4 text-base sm:text-lg text-white/85 max-w-xl">
+              <p className="mt-4 text-base sm:text-lg text-night/75 max-w-xl">
                 Qawla is reader-funded. No paywall, no intrusive ads, no club sponsorship. If you value verified football reporting, become a supporter today.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <Link href="/donate" className="btn-gold justify-center">
                   Become a supporter
                 </Link>
-                <Link href="/about" className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 font-bold rounded-xl bg-white/15 backdrop-blur border border-white/20 text-white hover:bg-white/25 transition-all text-sm sm:text-base min-h-[44px]">
+                <Link href="/about" className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 font-bold rounded-xl bg-night text-white hover:bg-night-light transition-all text-sm sm:text-base min-h-[44px]">
                   How we work
                 </Link>
               </div>
-              <p className="mt-5 text-sm text-white/70">
-                <span className="font-bold text-white">{formatNumber(SITE_STATS.totalDonors)}</span> readers already support Qawla.
+              <p className="mt-5 text-sm text-night/60">
+                <span className="font-bold text-night">{formatNumber(SITE_STATS.totalDonors)}</span> readers already support Qawla.
               </p>
             </div>
           </div>
