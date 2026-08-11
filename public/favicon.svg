@@ -1,0 +1,16 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#00e876"/>
+      <stop offset="0.55" stopColor="#00d96a"/>
+      <stop offset="1" stopColor="#00a854"/>
+    </linearGradient>
+    <linearGradient id="s" x1="10" y1="6" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#ffffff" stopOpacity="0.35"/>
+      <stop offset="1" stopColor="#ffffff" stopOpacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="42" height="42" rx="13" fill="url(#g)"/>
+  <rect x="3" y="3" width="42" height="42" rx="13" fill="url(#s)"/>
+  <text x="24" y="34" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="30" fill="#ffffff">Q</text>
+</svg>
