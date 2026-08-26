@@ -1,16 +1,1 @@
-<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="g" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-      <stop stopColor="#00e876"/>
-      <stop offset="0.55" stopColor="#00d96a"/>
-      <stop offset="1" stopColor="#00a854"/>
-    </linearGradient>
-    <linearGradient id="s" x1="10" y1="6" x2="30" y2="30" gradientUnits="userSpaceOnUse">
-      <stop stopColor="#ffffff" stopOpacity="0.35"/>
-      <stop offset="1" stopColor="#ffffff" stopOpacity="0"/>
-    </linearGradient>
-  </defs>
-  <rect x="3" y="3" width="42" height="42" rx="13" fill="url(#g)"/>
-  <rect x="3" y="3" width="42" height="42" rx="13" fill="url(#s)"/>
-  <text x="24" y="34" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="30" fill="#ffffff">Q</text>
-</svg>
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="44" height="44" rx="13" fill="#CDF544"/><path d="M14 10.5H30.5C35.19 10.5 39 14.31 39 19V28.5C39 33.19 35.19 37 30.5 37H17.2L11.4 42.2V19C11.4 14.31 14.31 10.5 19 10.5H14Z" fill="#0A0A0C"/><path d="M17 17H33M17 24H33M17 31H26" stroke="#CDF544" stroke-width="2.15" stroke-linecap="round"/><circle cx="34" cy="32.5" r="3.6" fill="#0A0A0C" stroke="#CDF544" stroke-width="1.5"/><path d="M32.5 32.5H35.5M34 31V34" stroke="#CDF544" stroke-width="1.1" stroke-linecap="round"/></svg>
