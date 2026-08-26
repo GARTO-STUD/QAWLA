@@ -86,7 +86,7 @@ const LEAGUES = [
 export default function HomePage() {
   const featured = getFeaturedArticle()!;
   const latest = ARTICLES.filter((a) => !a.featured && a.status === 'published').slice(0, 6);
-  const liveCount = LIVE_MATCHES.filter((m) => m.status === 'live' || m.status === 'halftime').length;
+  const heroMatch = LIVE_MATCHES.find((m) => m.status === 'live' || m.status === 'halftime');
 
   return (
     <>
@@ -100,15 +100,12 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 pb-14 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24">
           {/* Score strip */}
           <FadeIn>
-            <div className="inline-flex items-center gap-3 qawla-glass-dark rounded-full px-4 py-2.5">
-              <span className="badge bg-red-500/15 text-red-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                Live {liveCount > 0 ? `${liveCount}'` : ''}
-              </span>
-              <span className="text-sm font-black">MCI</span>
-              <span className="text-sm font-black text-pitch">2 – 1</span>
-              <span className="text-sm font-black">ARS</span>
-            </div>
+            {heroMatch ? <Link href="/live" className="inline-flex items-center gap-3 qawla-glass-dark rounded-full px-4 py-2.5 hover:bg-white/10 transition-colors">
+              <span className="badge bg-red-500/15 text-red-400"><span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />Live {heroMatch.minute}&apos;</span>
+              <span className="text-sm font-black">{heroMatch.homeTeam.shortName}</span>
+              <span className="text-sm font-black text-pitch">{heroMatch.homeScore} – {heroMatch.awayScore}</span>
+              <span className="text-sm font-black">{heroMatch.awayTeam.shortName}</span>
+            </Link> : <Link href="/live" className="inline-flex items-center gap-3 qawla-glass-dark rounded-full px-4 py-2.5 hover:bg-white/10 transition-colors"><span className="badge bg-pitch/15 text-pitch">Match centre</span><span className="text-sm font-black text-cream/80">Fixtures, scores &amp; analysis</span></Link>}
           </FadeIn>
 
           <FadeIn delay={0.06}>

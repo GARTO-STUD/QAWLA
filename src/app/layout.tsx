@@ -60,14 +60,14 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME} — Premium football journalism`,
     description: SITE_DESCRIPTION,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: SITE_NAME }],
+    images: [{ url: '/images/hero-stadium.jpg', width: 1200, height: 630, alt: `${SITE_NAME} football coverage` }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${SITE_NAME} — Football news, transfers, tactical analysis`,
     description: SITE_DESCRIPTION,
     creator: '@qawla',
-    images: ['/og-default.png'],
+    images: ['/images/hero-stadium.jpg'],
   },
   robots: {
     index: true,
